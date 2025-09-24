@@ -1,13 +1,10 @@
-
 struct Point<T, U> {
     x: T,
     y: T,
     z: U,
 }
 
-fn main() {
-    
-
+fn struct_generic_definitions() {
     let both_integer = Point {x:5, y:10, z:15};
     println!("both_integer.x, y, z = {} {} {}", both_integer.x, both_integer.y, both_integer.z);
 
@@ -16,4 +13,8 @@ fn main() {
 
     let integer_and_float = Point {x:5, y:10, z:4.0};
     println!("integer_and_float.x, y, z = {} {} {}", integer_and_float.x, integer_and_float.y, integer_and_float.z);
+}
+
+fn main() {
+    struct_generic_definitions();
 }
