@@ -1,42 +1,19 @@
 
-fn largest_i32(list: &[i32]) -> i32 {
-    let mut largest = list[0];
-    for &item in list.iter() {
-        if item > largest {
-            largest = item;
-        }
-    }
-    largest
-}
-
-fn largest_char(list: &[char]) -> char {
-    let mut largest = list[0];
-    for &item in list.iter() {
-        if item > largest {
-            largest = item;
-        }
-    }
-    largest
-}
-
-
-fn largest<T>(list: &[T]) -> T {
-    let mut largest = list[0];
-    
-    for &item in list.iter() {
-        if item > largest {
-            largest = item;
-        }
-    }
-    largest
+struct Point<T, U> {
+    x: T,
+    y: T,
+    z: U,
 }
 
 fn main() {
-    let number_list = vec![34, 50, 25, 100, 65];
-    let result = largest(&number_list);
-    println!("The largest number is {}", result);
+    
 
-    let char_list = vec!['y', 'm', 'a', 'q'];
-    let result = largest(&char_list);
-    println!("The largest char is {}", result);
+    let both_integer = Point {x:5, y:10, z:15};
+    println!("both_integer.x, y, z = {} {} {}", both_integer.x, both_integer.y, both_integer.z);
+
+    let both_float = Point {x:1.0, y:4.0, z:5.0};
+    println!("both_float.x, y, z = {} {} {}", both_float.x, both_float.y, both_float.z);
+
+    let integer_and_float = Point {x:5, y:10, z:4.0};
+    println!("integer_and_float.x, y, z = {} {} {}", integer_and_float.x, integer_and_float.y, integer_and_float.z);
 }
