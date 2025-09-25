@@ -1,5 +1,3 @@
-
-
 fn generic_structs_definitions() {
 
     struct Point<T, U> {
@@ -17,6 +15,19 @@ fn generic_structs_definitions() {
     println!("integer_and_float.x, integer_and_float.y: {}, {}", integer_and_float.x, integer_and_float.y);
 }
 
+fn generic_enum_definitions() {
+    enum Option<T> {
+        Some(T),
+        None,
+    }
+
+    enum Result<T, E> {
+        Ok(T),
+        Err(E),
+    }
+}
+
 fn main() {
     generic_structs_definitions();
+    generic_enum_definitions();
 }
