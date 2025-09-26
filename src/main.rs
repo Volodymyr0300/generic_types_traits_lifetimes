@@ -17,12 +17,12 @@ fn generic_structs_definitions() {
 
 fn generic_enum_definitions() {
     println!("Generic Enum Definitions:");
-    enum Option<T> {
+    enum _Option<T> {
         Some(T),
         None,
     }
 
-    enum Result<T, E> {
+    enum _Result<T, E> {
         Ok(T),
         Err(E),
     }
@@ -31,7 +31,7 @@ fn generic_enum_definitions() {
 fn generic_in_method_definitions() {
     println!("Generic in Method Definitions:");
     
-    fn generic_in_method_definitions_T() {
+    fn generic_in_method_definitions_t() {
         struct Point<T> {
         x: T,
         y: T,
@@ -44,16 +44,16 @@ fn generic_in_method_definitions() {
     }
 
     impl Point<f32> {
-        fn distance_from_origin(&self) -> f32 {
+        fn _distance_from_origin(&self) -> f32 {
             (self.x.powi(2) + self.y.powi(2)).sqrt()
         }
     }
 
     let p = Point { x: 5, y: 10 };
-    println!("p.x(): {}", p.x());
+        println!("p.x(): {}; p.y(): {}", p.x(), p.y);
     }
     
-    fn generic_in_method_definitions_T_U() {
+    fn generic_in_method_definitions_t_u() {
         struct Point<T, U> {
             x: T,
             y: U,
@@ -75,8 +75,8 @@ fn generic_in_method_definitions() {
         
     }
 
-    generic_in_method_definitions_T();
-    generic_in_method_definitions_T_U();
+    generic_in_method_definitions_t();
+    generic_in_method_definitions_t_u();
 }
 
 
