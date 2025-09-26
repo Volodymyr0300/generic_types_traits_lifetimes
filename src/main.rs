@@ -79,9 +79,34 @@ fn generic_in_method_definitions() {
     generic_in_method_definitions_t_u();
 }
 
+fn performance_of_code_using_generics() {
+    println!("Performance of Code Using Generics:");
+
+    let integer = Some(5);
+    let float = Some(5.0);
+    println!("integer: {:?}, float: {:?}", integer, float);
+    
+    #[derive(Debug)]
+    enum Option_i32 {
+        Some(i32),
+        None,
+    }
+    
+    #[derive(Debug)]
+    enum Option_f64 {
+        Some(f64),
+        None,
+    }
+
+    let integer = Option_i32::Some(5);
+    let float = Option_f64::Some(5.0);
+    println!("integer: {:?}, float: {:?}", integer, float);
+
+}
 
 fn main() {
     generic_structs_definitions();
     generic_enum_definitions();
     generic_in_method_definitions();
+    performance_of_code_using_generics();
 }
